@@ -2,28 +2,12 @@
 if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 
 			<footer id="main-footer">
-				<?php get_sidebar( 'footer' ); ?>
-
-
-		<?php
-			if ( has_nav_menu( 'footer-menu' ) ) : ?>
-
-				<div id="et-footer-nav">
-					<div class="container">
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'footer-menu',
-								'depth'          => '1',
-								'menu_class'     => 'bottom-nav',
-								'container'      => '',
-								'fallback_cb'    => '',
-							) );
-						?>
+				<div id="footer-top">
+					<div class="et_pb_row">
+					<h4>Sublime Digital is hiring.</h4>
+					<a href="#">Learn More</a>
 					</div>
-				</div> <!-- #et-footer-nav -->
-
-			<?php endif; ?>
-
+				</div>
 				<div id="footer-bottom">
 					<div class="container clearfix">
 				<?php
@@ -43,7 +27,14 @@ if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
 <?php endif; // ! is_page_template( 'page-template-blank.php' ) ?>
 
 	</div> <!-- #page-container -->
-
+<div id="contact-overlay">
+	<a href="#" id="closeContact" class="btn-close">X</a>
+	<div class="contain">
+		<h3>Contact Sublime Digital</h3>
+		<p>form</p>
+		<p>map</p>
+	</div>
+</div>
 	<?php wp_footer(); ?>
 </body>
 </html>

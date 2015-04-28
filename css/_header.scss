@@ -5,7 +5,8 @@
 	position: fixed;
 	top: 0;
 	box-shadow: none !important;
-	transition: all 200ms linear !important;
+	transition: all 300ms ease !important;
+	background-image: linear-gradient(to top, transparent, rgba(#000, .4) 100%) !important;
 	&.green-header{
 		background: $green !important;
 		#logo #mark *, #logo #text *{
@@ -16,4 +17,14 @@
 #logo{
 	width: 200px;
 }
+body #top-menu li{
+	padding-right: 42px;
+}
 
+#top-menu li > a, #top-menu li.current-menu-ancestor > a, header #top-menu li.current-menu-item > a, .bottom-nav li.current-menu-item > a{
+	color: #fff;
+	font-size: 19px;
+	&:hover{
+		color: $green;
+	}
+}

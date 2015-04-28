@@ -31,8 +31,9 @@ function sublime_child_scripts() {
 	wp_enqueue_script( 'sublime-child-main-js', get_stylesheet_directory_uri() . '/js/main.js', array(), '20120206', true );
 	wp_enqueue_script( 'waypoints');
 	wp_enqueue_script( 'svg-inject', get_stylesheet_directory_uri() . '/js/svg-injector.min.js', array(), '20150330', true);
+	wp_enqueue_script( 'skrollr', get_stylesheet_directory_uri() . '/js/skrollr.js', array(), '20150330', true);
 	// Enqueue Google fonts, don't @import them. Combine them into 1 request by separating the font families with a "|", like this:
-	// wp_enqueue_style('googlefonts', '//fonts.googleapis.com/css?family=PT+Serif:400,400italic|Oswald:400,700');
+    wp_enqueue_style('googlefonts', '//fonts.googleapis.com/css?family=Droid+Sans:400,700|Quicksand:400,700');
 }
 add_action( 'wp_enqueue_scripts', 'sublime_child_scripts' );
 
