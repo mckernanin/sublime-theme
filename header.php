@@ -116,7 +116,7 @@
 		</div> <!-- #top-header -->
 	<?php endif; // true ==== $et_top_info_defined ?>
 
-		<header id="main-header" class="<?php echo esc_attr( $primary_nav_class ); ?>">
+		<header id="main-header" class="<?php if(!is_page('home')){ echo "green-header"; }?><?php echo esc_attr( $primary_nav_class ); ?>">
 			<div class="container clearfix">
 			<?php
 				$logo = get_stylesheet_directory_uri() . "/img/logo.svg";

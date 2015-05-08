@@ -1,6 +1,20 @@
 jQuery(function($) { 
     $(document).ready(function() {
 
+    	$('.bio').on('click', function(){
+    		var face = $(this).find('.person');
+    		face.toggleClass('toggled');
+    		if(face.hasClass('toggled')){
+    			$(this).find('.person').addClass('hasToggled');
+    		} 
+    	})
+
+    	if($('body').hasClass('page-team')) {
+	        $(window).load(function(){
+	            $(".bio-paragraph").mCustomScrollbar();
+	        });
+    	}
+
 	$('img[src$=".svg"]').svgInject();
 
 		function isTouchDevice(){

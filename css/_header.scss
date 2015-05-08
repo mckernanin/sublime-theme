@@ -12,8 +12,39 @@
 		#logo #mark *, #logo #text *{
 			fill: #fff;
 		}
+		#top-menu li > a, #top-menu li.current-menu-ancestor > a, header #top-menu li.current-menu-item > a, .bottom-nav li.current-menu-item > a{
+			color: #fff;
+			font-size: 17px;
+			padding: 5px 10px;
+			&:hover{
+				color: #ddd;
+			}
+		}
+			li.current-menu-item > a{
+				background: #fff;
+				color: $green !important;
+				border-radius: 20px;
+			}
 	}
 }
+body:not(.page-home) {
+	#main-header{
+		background: #fff !important;
+		border-bottom: 1px solid #ccc;
+		#logo #mark *, #logo #text *{
+			fill: $green;
+		}
+		background-image: none !important;
+	}
+		#top-menu li > a, #top-menu li.current-menu-ancestor > a, header #top-menu li.current-menu-item > a, .bottom-nav li.current-menu-item > a{
+			color: #666;
+			font-size: 19px;
+			&:hover{
+				color: #111;
+			}
+		}
+}
+
 #logo{
 	width: 200px;
 }
@@ -23,8 +54,16 @@ body #top-menu li{
 
 #top-menu li > a, #top-menu li.current-menu-ancestor > a, header #top-menu li.current-menu-item > a, .bottom-nav li.current-menu-item > a{
 	color: #fff;
-	font-size: 19px;
+	font-size: 17px;
+	padding: 5px 10px;
+		transition: all 300ms ease;
 	&:hover{
-		color: $green;
+		color: #ccc;
+		transition: none;
 	}
 }
+			li.current-menu-item > a{
+				background: $green;
+				color: #fff !important;
+				border-radius: 20px;
+			}

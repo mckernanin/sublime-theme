@@ -33,7 +33,13 @@ function sublime_child_scripts() {
 	wp_enqueue_script( 'svg-inject', get_stylesheet_directory_uri() . '/js/svg-injector.min.js', array(), '20150330', true);
 	wp_enqueue_script( 'skrollr', get_stylesheet_directory_uri() . '/js/skrollr.js', array(), '20150330', true);
 	// Enqueue Google fonts, don't @import them. Combine them into 1 request by separating the font families with a "|", like this:
-    wp_enqueue_style('googlefonts', '//fonts.googleapis.com/css?family=Droid+Sans:400,700|Quicksand:400,700');
+    wp_enqueue_style('googlefonts', '//fonts.googleapis.com/css?family=PT+Sans:400,700|Quicksand:400,700');
+    wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+    if(is_page('Team')){
+    	wp_enqueue_script( 'scrollpane', get_stylesheet_directory_uri() . '/js/jquery.mCustomScrollbar.min.js', array('jquery'), '20150507', true );
+    	wp_enqueue_script( 'scrollpane', get_stylesheet_directory_uri() . '/js/mwheelintent.js', array('jquery'), '20150507', true );
+    	wp_enqueue_script( 'scrollpane', get_stylesheet_directory_uri() . '/js/mousewheel.js', array('jquery'), '20150507', true );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'sublime_child_scripts' );
 
