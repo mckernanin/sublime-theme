@@ -21,13 +21,12 @@ jQuery(function($) {
     		return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
 		}
 
-      // Change header color on home page scroll past hero
-	  $('.home-hero').next().waypoint(function() {
-	      $('#main-header').toggleClass('green-header');
-	  }, {
-	    offset: '80'
-	  })
-
+	// Change header color on home page scroll past hero
+	$('.home-hero').next().waypoint(function() {
+		$('#main-header').toggleClass('green-header');
+	}, {
+		offset: '115'
+	})
 
 	if( ($('.home-hero').length) && ( isTouchDevice() != true) ){
 
@@ -51,6 +50,20 @@ jQuery(function($) {
 		$('#contact-overlay').removeClass('active');
 		$('body').removeClass('noscroll');
 	})
+
+// Transforming Hamburger Icon state toggle
+    	var hamburger = $('#hamburger-icon');
+    	var header = $('#main-header');
+    	hamburger.click(function() {
+    		hamburger.toggleClass('active');
+    		header.toggleClass('nav-open');
+    		if (hamburger.hasClass('active')) {
+				$('#hamburger-icon .text').text('CLOSE');
+    		} else {
+    			$('#hamburger-icon .text').text('MENU');
+    		};
+    		return false;
+    	});
 
 
     });
