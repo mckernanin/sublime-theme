@@ -4,6 +4,9 @@ body:not(.page-home) .et_pb_section{
 
 .headline{
 	padding: 100px 0 200px;
+	@include bp(custom, 0, 551px) {
+		padding: 25px 0;
+	}
 	p{
 		width: 80%;
 		margin: 20px auto 0;
@@ -31,6 +34,13 @@ body:not(.page-home) .et_pb_section{
 	letter-spacing: -1px;
 	font-weight: 300;
 	margin-top: 10px;
+	@include bp(custom, 0, 551px) {
+		font-size: 30px;
+		margin-bottom: 25px;
+		+ p {
+			display: none;
+		}
+	}
 }
 
 // Team page
@@ -87,22 +97,22 @@ body:not(.page-home) .et_pb_section{
 			opacity: 1;
 		}
 		&.kevin{
-			background-image: url(http://digsublime.com/wp-content/uploads/2015/01/Kevin.png);
+			background-image: url(img/Kevin.png);
 		}
 		&.jason{
-			background-image: url(http://digsublime.com/wp-content/uploads/2015/01/Jason.png);
+			background-image: url(img/Jason.png);
 		}
 		&.brian{
-			background-image: url(http://digsublime.com/wp-content/uploads/2015/01/Brian.png);
+			background-image: url(img/Brian.png);
 		}
 		&.tyler{
-			background-image: url(http://digsublime.com/wp-content/uploads/2015/01/Tyler.png);
+			background-image: url(img/Tyler.png);
 		}
 		&.jeremy{
-			background-image: url(http://digsublime.com/wp-content/uploads/2014/09/Jeremy.png);
+			background-image: url(img/Jeremy.png);
 		}
 		&.tim{
-			background-image: url(http://digsublime.com/wp-content/uploads/2014/09/Tim.png);
+			background-image: url(img/Tim.png);
 		}
 		&.hasToggled{
 			animation: moveFront 500ms ease backwards 500ms;
