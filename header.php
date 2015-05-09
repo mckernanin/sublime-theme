@@ -116,13 +116,19 @@
 		</div> <!-- #top-header -->
 	<?php endif; // true ==== $et_top_info_defined ?>
 
-		<header id="main-header" class="<?php if(!is_page('home')){ echo "green-header"; }?><?php echo esc_attr( $primary_nav_class ); ?>">
+		<header id="main-header" class="<?php if(!is_page('home')){ echo "green-header "; }?><?php echo esc_attr( $primary_nav_class ); ?>">
 			<div class="container clearfix">
 			<?php
 				$logo = get_stylesheet_directory_uri() . "/img/logo.svg";
 			?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<img src="<?php echo esc_attr( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" id="logo" />
+				</a>
+
+				<a id="hamburger-icon" href="#" title="Menu">
+					<span class="line line-1"></span>
+					<span class="line line-2"></span>
+					<span class="line line-3"></span>
 				</a>
 
 				<div id="et-top-navigation">
@@ -150,9 +156,6 @@
 						endif;
 					?>
 					</nav>
-
-
-					<?php do_action( 'et_header_top' ); ?>
 				</div> <!-- #et-top-navigation -->
 			</div> <!-- .container -->
 		</header> <!-- #main-header -->
