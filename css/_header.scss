@@ -48,7 +48,7 @@ body:not(.page-home) {
 #logo{
 	width: 200px;
 }
-body #top-menu li{
+#top-menu li{
 	padding-right: 42px;
 }
 
@@ -62,8 +62,120 @@ body #top-menu li{
 		transition: none;
 	}
 }
-			li.current-menu-item > a{
-				background: $green;
-				color: #fff !important;
-				border-radius: 20px;
+
+li.current-menu-item > a{
+	background: $green;
+	color: #fff !important;
+	border-radius: 20px;
+}
+
+$height-icon: 25px;
+$width-line: 30px;
+$height-line: 4px;
+
+$transition-time: 0.4s;
+$rotation: 45deg;
+$translateY: ($height-icon / 2);
+$translateX: 0;
+
+#hamburger-icon {
+	width:$width-line;
+	height:$height-icon;
+	position:absolute;
+	display:block;
+	margin: 0;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	display: none;
+
+	.text {
+		position: absolute;
+		left: -50px;
+		text-transform: uppercase;
+		transform: translateY(-50%);
+		top: 50%;
+		color: $green;
+	}
+	
+	.line {
+		display:block;
+		background:$green;
+		width:$width-line;
+		height:$height-line;
+		position:absolute;
+		left:0;
+		border-radius:0;
+		transition: all $transition-time;
+		
+		&.line-1 {
+			top:0;
+		}
+		&.line-2 {
+			top:50%;
+		}
+		&.line-3 {
+			top:100%;
+		}
+	}
+	&:hover, &:focus {
+		 .line-1 {
+				transform: translateY($height-line / 2 * -1);
+		 }
+		.line-3 {
+				transform: translateY($height-line / 2);
+		}  
+	}
+	&.active {
+		.line-1 {
+			transform: translateY($translateY) translateX($translateX) rotate($rotation);
+		}
+		.line-2 {
+			opacity:0;
+		}
+		.line-3 {
+			transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+		}
+	}
+}
+
+@include bp(custom, 0, 768px) {
+	#et-top-navigation {
+		position: absolute;
+		top: 50px;
+		transform: translateX(100vw);
+		transition: all 0.3s;
+	}
+	.nav-open {
+		padding-bottom: 60px !important;
+		#et-top-navigation {
+			transform: translateX(0);
+		}
+	}
+	.green-header {
+		&.nav-open {
+			// padding-bottom: 60px !important;
+		}
+		#hamburger-icon {
+			.line {
+				background: white;
 			}
+		}
+	}
+	#top-menu {
+		display: block;
+		li {
+			padding-right: 7vw;
+		}
+	}
+	#main-header {
+		box-sizing: border-box;
+		padding: 10px 15px;
+		.container {
+			width: 100%;
+		}
+	}
+	#hamburger-icon {
+		display: block;
+	}
+}

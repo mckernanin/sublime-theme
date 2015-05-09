@@ -1,3 +1,45 @@
 $green: #99ca3c;
 $droid: 'PT Sans', sans-serif;
 $quicksand: 'Quicksand', sans-serif;
+
+// Media Queries
+@mixin bp($point, $min: false, $max: false) {
+  @if $point == large {
+    @media (min-width: 1075px) { @content; }
+  }
+  @else if $point == medium {
+    @media(min-width: 630px) and (max-width: 1075px) { @content; }
+  }
+  @else if $point == mediumLandscape{
+    @media (min-width: 630px) and (max-width: 1075px) and (orientation: landscape) { @content; }
+  }
+  @else if $point == small {
+    @media (max-width: 630px)  { @content; }
+  }
+  @else if $point == smallLandscape{
+    @media (max-width: 630px) and (orientation: landscape) { @content; }
+  }
+  @else if $point == custom{
+    @if $min >=1 and $max != false{
+      @if(unitless($min) == true){
+        $min: #{$min}px;
+      }
+      @if(unitless($max) == true){
+        $max: #{$max}px;
+      }
+      @media (min-width: $min) and (max-width: $max) { @content; }
+    }
+    @if $min != false and $max == false{
+      @if(unitless($min) == true){
+        $min: #{$min}px;
+      }
+      @media (min-width: $min) { @content; }
+    }
+    @if $min == 0 and $max != false{
+      @if(unitless($max) == true){
+        $max: #{$max}px;
+      }
+      @media (max-width: $max ) { @content; }
+    }
+  }
+}

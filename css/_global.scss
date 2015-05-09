@@ -7,3 +7,11 @@ h1, h2, h3, h4, h5, h6{
 	font-family: $quicksand;
 	font-weight: bold;
 }
+
+@include bp(custom, 0, 551px) {
+	.et_pb_row, 
+	.container, 
+	.et_pb_container {
+		width: 320px;
+	}
+}
