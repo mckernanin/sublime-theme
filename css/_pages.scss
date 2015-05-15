@@ -1,11 +1,14 @@
 body:not(.page-home) .et_pb_section{
 	background: #eee !important;
+	&:first-of-type {
+		padding: 0;
+	}
 }
 
 .headline{
 	padding: 100px 0 200px;
 	@include bp(custom, 0, 551px) {
-		padding: 25px 0;
+		padding: 25px 0 0;
 	}
 	p{
 		width: 80%;
@@ -37,6 +40,7 @@ body:not(.page-home) .et_pb_section{
 	@include bp(custom, 0, 551px) {
 		font-size: 30px;
 		margin-bottom: 25px;
+		width: 100%;
 		+ p {
 			display: none;
 		}
@@ -44,6 +48,13 @@ body:not(.page-home) .et_pb_section{
 }
 
 // Team page
+.page-id-47 {
+	.et_pb_column, .et_pb_row {
+		@include bp(custom, 0, 768px) {
+			padding: 0;
+		}
+	}
+}
 .bio{
 	background: #fff;
 	text-align: center; 
@@ -51,6 +62,10 @@ body:not(.page-home) .et_pb_section{
 	margin: 0 auto 200px;
 	border-top: 3px solid $green;
 	max-height: 290px;
+	@include bp(custom, 0, 768px) {
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+	}
 	.person{
 		border-radius: 50%;
 		width: 250px;
@@ -65,6 +80,12 @@ body:not(.page-home) .et_pb_section{
 		position: relative;
 		cursor: pointer;
 		transition: all 500ms ease;
+		@include bp(custom, 0, 768px) {
+			width: 75px;
+			height: 75px;
+			margin: 10px;
+			transform: none;
+		}
 		&:before{
 			content: '+';
 			position: absolute;
@@ -147,13 +168,27 @@ body:not(.page-home) .et_pb_section{
 		}
 	}
 	.bio-text{
-			overflow: hidden;
+		overflow: hidden;
+		@include bp(custom, 0, 768px) {
+			margin-top: -70px;
+			text-align: right;
+			padding-right: 5px;
+			transform: none;
+		}
 		h3{
 			text-transform: uppercase;
+			@include bp(custom, 0, 768px) {
+				font-size: 18px;
+				padding-bottom: 5px;
+			}
 		}
 		h4{
 			font-family: $droid;
 			font-weight: normal;
+			@include bp(custom, 0, 768px) {
+				font-size: 16px;
+				letter-spacing: -.4px;
+			}
 		}
 		margin-top: 20px;
 		transform: translateY(-100px);
@@ -165,7 +200,10 @@ body:not(.page-home) .et_pb_section{
 			margin-top: 10px;
 			position: relative;
 			opacity: 0;
-				transition: opacity 500ms ease 800ms;
+			transition: opacity 500ms ease 800ms;
+			@include bp(custom, 0, 768px) {
+				height: 0;
+			}
 			&:after{
 				position: absolute;
 				bottom: 0px;
@@ -232,6 +270,7 @@ body:not(.page-home) .et_pb_section{
 		font-weight: bold;
 		text-align: left;
 		width: 500px;
+		max-width: 100%;
 		margin: 40px auto 0;
 		display: block;
 		color: $green;

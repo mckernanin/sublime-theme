@@ -140,16 +140,18 @@ $translateX: 0;
 }
 
 @include bp(custom, 0, 768px) {
+	#wpadminbar.mobile {
+		display: none !important;
+	}
 	#et-top-navigation {
 		position: absolute;
 		top: 50px;
-		transform: translateX(100vw);
-		transition: all 0.3s;
 	}
-	.nav-open {
+	#main-header.nav-open {
 		padding-bottom: 60px !important;
-		#et-top-navigation {
+		#top-menu {
 			transform: translateX(0);
+			transition: all 0.3s 0.1s;
 		}
 	}
 	.green-header {
@@ -162,15 +164,32 @@ $translateX: 0;
 			}
 		}
 	}
+	#et-top-navigation {
+		width: 100%;
+	}
+	#top-menu-nav {
+		width: 100%;
+	}
 	#top-menu {
 		display: block;
+		text-align: center;
+		transform: translateX(100vw);
+		transition: all 0.3s 0.1s;
+		width: 100%;
 		li {
-			padding-right: 7vw;
+			display: inline-block;
+			padding-right: 1vw;
+
+			> a {
+				font-size: 17px !important;
+			}
 		}
 	}
 	#main-header {
 		box-sizing: border-box;
 		padding: 10px 15px;
+		top: 0 !important;
+		transition: all 0.3s 0.1s;
 		.container {
 			width: 100%;
 		}

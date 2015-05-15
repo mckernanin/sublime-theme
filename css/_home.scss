@@ -16,7 +16,7 @@
 	top: 0;
 	z-index: -2;
 	@include bp(custom, 0, 551px) {
-		height: 50vh;
+		height: 100vw;
 		min-height: 0;
 	}
 	.et_pb_row{
@@ -32,7 +32,7 @@
 			line-height: 1.3em;
 
 			@include bp(custom, 0, 551px) {
-				font-size: 35px;
+				font-size: 10vw;
 				text-shadow: 2px 2px 5px #000;
 				text-align: center;
 			}
@@ -47,6 +47,12 @@
 			text-transform: uppercase;
 		}
 	}
+	.et_pb_text {
+		margin: 0;
+	}
+	.et_pb_column {
+		padding: 0;
+	}
 }
 
 .et_pb_section:not(.home-hero){
@@ -56,12 +62,16 @@
 .home-hero + .et_pb_section{
 	margin-top: 74vh;
 	@include bp(custom, 0, 551px) {
-		margin-top: 50vh
+		margin-top: calc( 100vw - 46px );
+		padding: 0;
 	}
 	.et_pb_text#initial-headline{
 		font-size: 23px;
 		text-align: center;
 		line-height: 1.2em;
+		@include bp(custom,  0, 360px) {
+			line-height: 1.1em;
+		}
 		h3{
 			color: darken($green, 12%);
 			font-size: 42px;
@@ -83,6 +93,10 @@
 			-webkit-background-clip: text;
 			@include bp(custom, 0, 551px) {
 				text-align: justify;
+				line-height: 1.5em;
+				font-size: 22px;
+				background-image: none;
+				background-color: darken($green, 12%);
 			}
 			&:after{
 				content: '';
@@ -98,7 +112,7 @@
 .page-home{
 	.et_pb_blurb_content{
 		@include bp(custom, 0, 551px) {
-			font-size: 19px;
+			font-size: 18px;
 			text-align: justify;
 		}
 		span.fa{
